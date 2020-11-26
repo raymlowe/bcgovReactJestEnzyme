@@ -1,0 +1,1 @@
+We are going to build this as a functional component. So we will not be using a class. 
