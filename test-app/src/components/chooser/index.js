@@ -1,14 +1,9 @@
 import React, { useState } from 'react';
-
+import './styles.scss';
 
 const Chooser = () => {
-
-    const [text, setText] = useState("Initial State")
-    const changeText = () => {
-        setText("Initial State Changed")
-    }
-
     const [name, setName] = useState("")
+
     const changeToCraig = () => {
         setName("Craig");
     }
@@ -18,15 +13,12 @@ const Chooser = () => {
     const changeToRaymond = () => {
         setName("Raymond");
     }
-
+    const changeToTyler = () => {
+        setName("Tyler");
+    }
 
     return (
-    <div>
-        <button data-test='test_name_button' onClick={changeText}>
-        Change Text
-        </button>
-        <p data-test='test_state' className='changableText'>{text}</p>
-
+    <div className="chooser">
         <button data-test="setCraig" onClick={changeToCraig}>
             Set Craig
         </button>
@@ -36,7 +28,10 @@ const Chooser = () => {
         <button data-test="setRaymond" onClick={changeToRaymond}>
             Set Raymond
         </button>
-    <p data-test='setDeveloper'>{name}</p>
+        <button data-test="setRaymond" onClick={changeToTyler}>
+            Set Tyler
+        </button>
+    <p className="styleBold styleBlue" data-test='setDeveloper'>{name}</p>
     </div>
     )
 }
