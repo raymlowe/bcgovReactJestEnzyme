@@ -26,7 +26,7 @@ describe('Header Component', () =>{
 
     test('Choose craig', () => {
         const wrapper = mount(<Chooser />)
-        const choosen_developer = wrapper.find('.styleBlue');
+        const choosen_developer = wrapper.find(`[data-test='setDeveloper']`);
         expect(choosen_developer.text()).toBe(""); 
 
          //Simulate button click
