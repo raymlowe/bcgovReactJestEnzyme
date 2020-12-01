@@ -36,7 +36,7 @@ const Chooser = () => {
             Choose Tyler
         </button>
     {/* Container to display chosen developer */}
-    <p className="styleBold styleBlue" data-test='setDeveloper'>{name}</p>
+    <p className="styleBold styleGreen" data-test='setDeveloper'>{name}</p>
     </div>
     )
 }

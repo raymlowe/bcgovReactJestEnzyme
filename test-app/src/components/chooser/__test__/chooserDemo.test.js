@@ -3,30 +3,37 @@ import Enzyme, { shallow, render, mount } from 'enzyme';
 import Chooser from '../index';
 import Adapter from 'enzyme-adapter-react-16';
 import App from '../../../App'
-/*import {findByTestAttr} from '../../../../utils'*/
+import {findByTestAttr} from '../../../../utils'
 
 Enzyme.configure({ adapter: new Adapter() })
 
-describe('Show Mount vs Shallow', () => {
-    let m = mount(<App />)
-    console.log(m.debug())
-})
 
-/*
-1
-*/
 
 describe('Chooser Component Tests', () =>{
-/*
-2
-*/
+
+    let wrapper;
+    let choosen_developer;
+    beforeEach(() => {
+        wrapper = mount(<Chooser/>);
+        choosen_developer = findByTestAttr(wrapper, "setDeveloper");
+    });
+
+
 
     it('has choosen eric', () => {
-         let wrapper = mount(<Chooser/>);
-         let choosen_developer = wrapper.find(".styleBlue");
-         let erics_button = wrapper.find(".selector_button_eric");
+         let erics_button = findByTestAttr(wrapper, "setEric");
          erics_button.simulate('click');
          expect(choosen_developer.text()).toBe("Eric");
     });
+
+
+
+    it('has choosen craig', () => {
+        let craig_button = findByTestAttr(wrapper, "setCraig");
+        craig_button.simulate('click');
+        expect(choosen_developer.text()).toBe("Craig");
+    });
+
+
 });
 
