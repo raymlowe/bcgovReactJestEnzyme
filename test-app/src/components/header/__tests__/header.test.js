@@ -5,7 +5,6 @@ import { findByTestAttr} from '../../../../utils'
 
 
 
-
 /*////////////////////////////////////////////////////////////////////////
     Describe block (optional component): This encapsulates header tests
 ////////////////////////////////////////////////////////////////////////*/
@@ -81,6 +80,6 @@ describe('Header Component', () =>{
         //After
         const logo = findByTestAttr(header, "logoIMG")
         expect(logo.length).toBe(1)
-    })
+    });
 });
 
